@@ -2,7 +2,7 @@
 
 #### simple train
 
-## refer https://blog.csdn.net/mogoweb/article/details/82152174 
+refer https://blog.csdn.net/mogoweb/article/details/82152174 
 
 ```python
 ## refer https://blog.csdn.net/mogoweb/article/details/82152174
