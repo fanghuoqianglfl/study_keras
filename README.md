@@ -216,3 +216,86 @@ print("Large CNN Error: %.2f%%" % (100-scores[1]*100))
  
 
 ```
+
+
+keras conv2d 解析
+
+refer https://blog.csdn.net/qq_30527579/article/details/106782019
+
+```python
+
+import numpy as np
+from keras.datasets import mnist
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.layers import Dropout
+from keras.utils import np_utils
+from keras import layers
+from keras.layers.convolutional import  Conv2D
+
+def conv2d_test():
+    model = Sequential()
+    model.add(Conv2D(filters=3, kernel_size=(2, 2), input_shape=(4,4,1),  kernel_initializer='ones'))
+    return model
+
+def test():
+    conv2d_model = conv2d_test()
+    np.random.RandomState(7)
+    #data_test = np.random.randint(1, 3, (1, 4, 4, 1)) one inener 3d , 4x(4,1)  4 ge 2d(4, 1) 
+    #numpy.random.randint(low, high=None, size=None, dtype='l') [low, high) 
+    #size: int or tuple of ints  ze = (m, n, k)，则输出数组的shape = (m, n, k)
+    data_test = np.array([[
+                    [[2],[2],[2],[1]],
+                    [[2], [1], [2], [2]],
+                    [[1], [2], [1], [2]],
+                    [[1], [2], [1], [1]]
+                    ]])
+    predict_result = conv2d_model.predict(data_test)
+    print(data_test)
+    print(predict_result)
+    print(np.shape(predict_result))
+
+
+
+if __name__ == '__main__':
+    test()
+out:
+[[[[2]
+   [2]
+   [2]
+   [1]]
+
+  [[2]
+   [1]
+   [2]
+   [2]]
+
+  [[1]
+   [2]
+   [1]
+   [2]]
+
+  [[1]
+   [2]
+   [1]
+   [1]]]]
+[[[[7. 7. 7.]
+   [7. 7. 7.]
+   [7. 7. 7.]]
+
+  [[6. 6. 6.]
+   [6. 6. 6.]
+   [7. 7. 7.]]
+
+  [[6. 6. 6.]
+   [6. 6. 6.]
+   [5. 5. 5.]]]]
+(1, 3, 3, 3)
+```
+
+
+
+
+
+
+
