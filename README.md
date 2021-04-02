@@ -94,6 +94,54 @@ print('Baseline error %s %%'%str(100-scores[1]*100))
 
 ```
 
+```shell
+keras.layers.Dense(units, 
+				  activation=None, 
+				  use_bias=True, 
+				  kernel_initializer='glorot_uniform', 
+				  bias_initializer='zeros', 
+				  kernel_regularizer=None, 
+				  bias_regularizer=None, 
+			      activity_regularizer=None, 
+				  kernel_constraint=None, 
+				  bias_constraint=None)
+units:
+该层有几个神经元
+
+activation:
+该层使用的激活函数
+
+use_bias:
+是否添加偏置项
+
+kernel_initializer:
+权重初始化方法
+
+bias_initializer:
+偏置值初始化方法
+
+kernel_regularizer:
+权重规范化函数
+
+bias_regularizer:
+偏置值规范化方法
+
+activity_regularizer:
+输出的规范化方法
+
+kernel_constraint:
+权重变化限制函数
+
+bias_constraint:
+偏置值变化限制函数
+
+https://blog.csdn.net/weixin_42499236/article/details/84624195
+
+model.add(Dense(32, input_shape=(16,)))
+# now the model will take as input arrays of shape (*, 16)
+# and output arrays of shape (*, 3)
+
+```
 
 CNN 卷积神经网络
 
